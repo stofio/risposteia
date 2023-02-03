@@ -126,9 +126,26 @@ const messageInput = document.querySelector("#message-input");
 const submitButton = document.querySelector("#submit-button");
 
 submitButton.addEventListener("click", function() {
-  // call OpenAI API here to get response
-  // add response to chatMessages
+  testChat();
 });
+
+
+function testChat() {
+  messageInput.value = "Ciao, come stai?";
+  submitButton.click();
+
+  // wait for API response before adding test response
+  setTimeout(function() {
+    const testResponse = "Sto bene, grazie. E tu?";
+    const messageContainer = document.createElement("div");
+    messageContainer.innerHTML = `
+      <div class="message response">
+        <p>${testResponse}</p>
+      </div>
+    `;
+    chatMessages.appendChild(messageContainer);
+  }, 1000);
+}
 
 
 </script>
