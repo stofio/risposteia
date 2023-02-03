@@ -256,11 +256,11 @@ const endpoint = `https://api.openai.com/v1/engines/text-davinci-002/jobs`;
 console.log(123)
 
 
-/*fetch(endpoint, {
+fetch(endpoint, {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
-    "Authorization": `Bearer ${apiKey}`
+    "Authorization": `Bearer ${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}`
   },
   body: JSON.stringify({
     "prompt": "What is your question?",
@@ -280,7 +280,7 @@ console.log(123)
     document.getElementById("response").innerHTML = response;
   })
   .catch(error => console.error(error));
-*/
+
 
 
 const chatMessages = document.querySelector("#chat-messages");
