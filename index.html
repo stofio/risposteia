@@ -1,24 +1,92 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Simple OpenAI Chatbot</title>
-    <style>
-      /* Add some styling for the page */
-    </style>
-  </head>
-  <body>
-    <h1>Simple OpenAI Chatbot</h1>
-    <form>
-      <input type="text" id="input-text" placeholder="Enter your question">
-      <button type="submit">Submit</button>
-    </form>
-    <div id="response">
-      <!-- Response from OpenAI API will be displayed here -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatGPT</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div id="chat-container">
+    <div id="chat-header">
+      <h1>ChatGPT</h1>
     </div>
-    <script>
-      // JavaScript code to interact with OpenAI API
-    </script>
-  </body>
+    <div id="chat-messages">
+      <!-- messages will be added here dynamically -->
+    </div>
+    <div id="chat-input">
+      <input type="text" id="message-input" placeholder="Enter message here...">
+      <button id="submit-button">Submit</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>
+
+<style>
+  body {
+  background-color: #333;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+#chat-container {
+  width: 500px;
+  margin: 50px auto;
+  background-color: #444;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#chat-header {
+  background-color: #555;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+#chat-header h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+#chat-messages {
+  height: 400px;
+  overflow-y: scroll;
+  padding: 20px;
+}
+
+#chat-input {
+  background-color: #555;
+  padding: 20px;
+  border-top: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+}
+
+#chat-input input {
+  width: 80%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #444;
+  color: #fff;
+}
+
+#chat-input button {
+  width: 20%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #555;
+  color: #fff;
+  cursor: pointer;
+}
+
+#chat-input button:hover {
+  background-color: #666;
+}
+</style>
 
 <script type="text/javascript">
   const apiKey = "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";
@@ -50,5 +118,17 @@ fetch(endpoint, {
     document.getElementById("response").innerHTML = response;
   })
   .catch(error => console.error(error));
+
+
+
+const chatMessages = document.querySelector("#chat-messages");
+const messageInput = document.querySelector("#message-input");
+const submitButton = document.querySelector("#submit-button");
+
+submitButton.addEventListener("click", function() {
+  // call OpenAI API here to get response
+  // add response to chatMessages
+});
+
 
 </script>
