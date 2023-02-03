@@ -234,8 +234,9 @@ body * {
 </style>
 
 <script type="text/javascript">
-  const apiKey = "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";
-const endpoint = `https://api.openai.com/v1/engines/text-davinci-002/jobs`;
+  require('dotenv').config();
+  const apiKey = process.env.API_KEY;
+  const endpoint = `https://api.openai.com/v1/engines/text-davinci-002/jobs`;
 
 
 /*fetch(endpoint, {
