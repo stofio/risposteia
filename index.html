@@ -3,62 +3,158 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ChatGPT</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="description" content="Prova l'intelligenza artificiale che si basa su ChatGPT in italiano! RisposteIA è una chat alla quale puoi fare domande e ricevere una risposta intelligente in pochi istanti.">
+  <meta name="keywords" content="Intelligenza Artificiale, IA, chat, ChatGPT, openAI">
+  <title>RisposteIA Chat: Intelligenza Artificiale in Italiano</title>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
 </head>
 <body>
+  <header>
+    <div class="header-logo">
+      <img src="risposteIA logo.png" />
+      <h1>Fatti stupire dell'Intelligenza Artificiale in chat</h1>
+    </div>
+  </header>
+
   <div id="chat-container">
     <div id="chat-header">
-      <h1>ChatGPT</h1>
+      <div class="msg-container">
+        <div class="message risposteia">
+          <label class="sender-name">RisposteIA:</label>
+          <p>Come posso aiutarti?</p>
+        </div>
+      </div>
     </div>
     <div id="chat-messages">
       <!-- messages will be added here dynamically -->
     </div>
-    <div id="chat-input">
-      <input type="text" id="message-input" placeholder="Enter message here...">
-      <button id="submit-button">Submit</button>
-    </div>
+    <form id="chat-input">
+      <input type="text" id="message-input" placeholder="Inserisci una domanda...">
+      <button id="submit-button">Invia</button>
+    </form>
   </div>
-  <script src="script.js"></script>
+  <p class="disclaimer">Queste risposte sono estratte da OpenAI e sono create come dimostrazione. Le risposte non devono essere considerate affidabili al 100%.</p>
+
+  <div id="content">
+    <h2>Come funziona RisposteIA?</h2>
+    <p>Comincia con una domanda, fatti rispondere, e continua la conversazione. </p>
+    <p>RisposteIA fa conto dell'intera conversazione e ti risponde in base alle domande precedenti.</p>
+
+    <p>Ecco alcuni esempi di richieste che puoi fare nella chat di RisposteIA:</p>
+
+    <ul>
+      <li>Cosa posso cucinare stasera?</li>
+      <li>Spiega il teorema di pitagora</li>
+      <li>Come avere successo nella vita?</li>
+      <li>Posso andare sulla luna?</li>
+      <li>Ho spira alla gola e continuo a starnutire, cosa può essere?</li>
+    </ul>
+
+    <p>Sii creativo, testa i limiti di RisposteIA e scopri quanto può esserti utile nel farti imparare cose nuove!</p>
+
+    <h2>Come posso usare RisposteIA?</h2>
+    <p>RisposteIA è nato dall'idea nel creare una chat simile a ChatGPT ma solo in lingua italiana. 
+    RisposteIA è più limitato in certe funzioni di ChatGPT, come ad esempio non scrive codici e non può dare risposte troppo lunghe, 
+    ma in sostanza si comporta proprio come ChatGPT essendo dalla stessa piattaforma openAI.</p>
+
+    <p>Ecco come RisposteIA ti può essere utile:</p>
+    <ul>
+      <li><b>Conversazioni: </b>RisposteIA risponde ad ogni tua domanda, da consigli e ti permette di approffondire ogni tematica.</li>
+      <li><b>Generazione di testo: </b>RisposteIA può generare testo, come storie, riassunti o poemi.</li>
+      <li><b>Risposta a domande: </b>RisposteIA può essere utilizzato per rispondere a domande su una vasta gamma di argomenti, rendendolo uno strumento utile per il recupero di informazioni e la ricerca.</li>
+    </ul>
+
+
+    <h2>Cos'é un IA</h2>
+    <p>L'intelligenza artificiale (IA) è un campo in rapido sviluppo che si concentra sulla creazione di sistemi che possono eseguire compiti che di solito richiedono l'intelletto umano, come il ragionamento, l'apprendimento e la comprensione del linguaggio. </p>
+    <p>La IA viene raggiunta attraverso l'utilizzo di algoritmi complessi che analizzano grandi quantità di dati e utilizzano queste informazioni per prendere decisioni e migliorare nel tempo. Ci sono molte applicazioni pratiche per l'IA, come il riconoscimento vocale, la traduzione automatica e la guida autonoma.</p>
+    <p>La IA sta anche cambiando il modo in cui le aziende lavorano e interagiscono con i clienti. È un campo emozionante e in rapida evoluzione che vale la pena esplorare ulteriormente.</p>
+
+  </div>
+
 </body>
 </html>
 
 <style>
-  body {
-  background-color: #333;
-  color: #fff;
+
+#content {
+  color: #2a3a53;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding:  0 10px;
+}
+
+body {
+  font-family: Roboto;
+  background-color: #f7f7f7;
   font-family: Arial, sans-serif;
+}
+
+body * {
+  font-family: Roboto;
 }
 
 #chat-container {
   width: 500px;
-  margin: 50px auto;
+  margin: 25px auto;
   background-color: #444;
   border-radius: 10px;
   overflow: hidden;
 }
 
+@media only screen and (max-width: 600px) {
+  #chat-container {
+    width: 95%;
+  }
+}
+
 #chat-header {
   background-color: #555;
-  padding: 20px;
-  text-align: center;
   border-bottom: 1px solid #333;
 }
 
-#chat-header h1 {
+.header-logo {
+  text-align: center;
+}
+.header-logo img {
+  max-width: 250px;
+}
+
+.header-logo h1 {
+  color: #2a3a53;
   margin: 0;
-  font-size: 22px;
+  font-size: 16px;
 }
 
 #chat-messages {
   height: 400px;
   overflow-y: scroll;
-  padding: 20px;
+}
+
+#chat-messages::-webkit-scrollbar {
+  width: 10px;
+  border-left: solid 1px #333333;
+}
+
+#chat-messages::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  #chat-messages {
+    height: 300px;
+  }
 }
 
 #chat-input {
   background-color: #555;
-  padding: 20px;
+  padding: 8px;
   border-top: 1px solid #333;
   display: flex;
   justify-content: space-between;
@@ -71,6 +167,35 @@
   border-radius: 5px;
   background-color: #444;
   color: #fff;
+  font-size: 14px;
+}
+
+.sender-name {
+  opacity: 0.5;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.message {
+  padding: 15px;
+  color: #fff;
+}
+
+.message p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 19px;
+}
+
+.message.risposteia {
+  background-color: #555555;
+}
+
+@media only screen and (max-width: 600px) {
+  #chat-input input {
+    width: 70%;
+    font-size: 12px;
+  }
 }
 
 #chat-input button {
@@ -78,23 +203,41 @@
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #555;
-  color: #fff;
+  background-color: #ccc;
+  color: #202023;
   cursor: pointer;
+  font-size: 14px;
+}
+
+#chat-input button:hover {
+  background-color: #ddd;  /* even lighter shade of gray */
+}
+
+@media only screen and (max-width: 600px) {
+  #chat-input button {
+    width: 30%;
+    font-size: 12px;
+  }
 }
 
 #chat-input button:hover {
   background-color: #666;
 }
+
+.disclaimer {
+  font-size: 13px;
+    color: #686868;
+    text-align: center;
+}
+
 </style>
 
 <script type="text/javascript">
   const apiKey = "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";
 const endpoint = `https://api.openai.com/v1/engines/text-davinci-002/jobs`;
 
-const inputText = document.getElementById("input-text").value;
 
-fetch(endpoint, {
+/*fetch(endpoint, {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
@@ -118,33 +261,46 @@ fetch(endpoint, {
     document.getElementById("response").innerHTML = response;
   })
   .catch(error => console.error(error));
-
+*/
 
 
 const chatMessages = document.querySelector("#chat-messages");
 const messageInput = document.querySelector("#message-input");
 const submitButton = document.querySelector("#submit-button");
-
-submitButton.addEventListener("click", function() {
-});
-  testChat();
+const form = document.querySelector("#chat-input");
 
 
-function testChat() {
-  messageInput.value = "Ciao, come stai?";
-  submitButton.click();
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+  //addMessage(messageInput.value, 'RisposteIA');
+  addMessage(messageInput.value, 'Io');
 
-  // wait for API response before adding test response
-  setTimeout(function() {
-    const testResponse = "Sto bene, grazie. E tu?";
-    const messageContainer = document.createElement("div");
-    messageContainer.innerHTML = `
-      <div class="message response">
-        <p>${testResponse}</p>
-      </div>
-    `;
-    chatMessages.appendChild(messageContainer);
-  }, 1000);
+  });
+
+chatMessages.addEventListener("click", function(event) {
+    event.preventDefault();
+  //addMessage(messageInput.value, 'RisposteIA');
+  addMessage(messageInput.value, 'RisposteIA');
+  
+  });
+ 
+
+
+function addMessage(text, name) {
+  let msgColorClass = '';
+  if(name == 'RisposteIA') {
+    msgColorClass = 'risposteia';
+  }
+
+  const messageContainer = document.createElement("div");
+  messageContainer.className = 'msg-container';
+  messageContainer.innerHTML = `
+    <div class="message ${msgColorClass}">
+      <label class="sender-name">${name}:</label>
+      <p>${text}</p>
+    </div>
+  `;
+  chatMessages.appendChild(messageContainer);
 }
 
 
