@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>Simple OpenAI Chatbot</title>
+    <style>
+      /* Add some styling for the page */
+    </style>
+  </head>
+  <body>
+    <h1>Simple OpenAI Chatbot</h1>
+    <form>
+      <input type="text" id="input-text" placeholder="Enter your question">
+      <button type="submit">Submit</button>
+    </form>
+    <div id="response">
+      <!-- Response from OpenAI API will be displayed here -->
+    </div>
+    <script>
+      // JavaScript code to interact with OpenAI API
+    </script>
+  </body>
+</html>
+
+<script type="text/javascript">
+  const apiKey = "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";
+const endpoint = `https://api.openai.com/v1/engines/text-davinci-002/jobs`; 
+
+const inputText = document.getElementById("input-text").value;
+
+fetch(endpoint, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "Authorization": `Bearer ${apiKey}`
+  },
+  body: JSON.stringify({
+    "prompt": "What is your question?",
+    "max_tokens": 100,
+    "temperature": 0.5,
+    "n": 1,
+    "stop": "",
+    "presence_penalty": 0
+  })
+})
+  .then(response => response.json())
+  .then(data => {
+    // Extract the response from the API response
+    const response = data.choices[0].text;
+
+    // Display the response on the page
+    document.getElementById("response").innerHTML = response;
+  })
+  .catch(error => console.error(error));
+
+</script>
